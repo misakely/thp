@@ -16,7 +16,7 @@ def inverted_pyramid(nb_floors)
 end
 
 def ask_floors()
-  # Ask user of many floors he wants (between 1 & 25)
+  # Ask user how many floors he wants (between 1 & 25)
   # return an integer
   puts "Bienvenue dans ma super pyramide. Combien d'etages veux-tu ? (1-25)";
   floors = gets.chomp.to_i
