@@ -7,11 +7,30 @@ def pyramid(nb_floors)
    end
  end
 
+def pyramid_while(nb_floors)
+  # Use a while
+  i = 1
+  while i <= nb_floors
+    puts ('*' * i)
+    i += 1
+  end
+end
+
 def inverted_pyramid(nb_floors)
   # Display an ascendant pyramid of x floors
   puts "Voici la pyramide:"
   1.upto(nb_floors) do |i|
     puts(' '*(nb_floors - i) + ('*' * i))
+  end
+end
+
+def inverted_while_pyramid(nb_floors)
+  # Display an ascendant pyramid of x floors
+  puts "Voici la pyramide:"
+  i = 1
+  while i <= nb_floors
+    puts(' '*(nb_floors - i) + ('*' * i))
+    i += 1
   end
 end
 
