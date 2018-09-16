@@ -11,29 +11,20 @@ class Pyramid
     puts "Bienvenue dans Pyramid Builder. Combien d'etages veux-tu ? (1-25)";
     print ">"
     nb_floors = gets.chomp.to_i
-
     # We want only pyramids of 25 height maximum
-    if (nb_floors >= 1 && nb_floors <= 25)
-      @nb_floors = nb_floors
-    else
-      puts "Tu m'en demande trop. Entre 1 et 25 etages."
-    end
+    @nb_floors = nb_floors if (nb_floors >= 1 && nb_floors <= 25)
+    puts "Tu m'en demande trop. Entre 1 et 25 etages."
   end
 
   def descendant()
     # Display descendant way
-
-    1.upto(nb_floors) do |i|
-      puts ('*' * i)
-    end
+    1.upto(nb_floors) {|i| puts ('*' * i)}
   end
 
   def inverted()
-    # Display an ascendan
+    # Display an ascendant way
     puts "\n\n\nVoici une partie de ta pyramide:\n\n"
-    1.upto(nb_floors) do |i|
-      puts(' '*(nb_floors - i) + ('*' * i))
-    end
+    1.upto(nb_floors) {|i| puts(' '*(nb_floors - i) + ('*' * i))}
   end
 
   def descendant_while()
