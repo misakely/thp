@@ -38,7 +38,10 @@ class Pyramid
   end
 end
 
+# NEw instance of Pyramid
 my_pyramid = Pyramid.new()
+# Control oustide object (best practise?)
+# We want floors 1..25
 if (my_pyramid.nb_floors >=1 && my_pyramid.nb_floors <= 25)
   my_pyramid.inverted
 else
