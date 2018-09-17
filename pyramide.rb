@@ -12,8 +12,9 @@ class Pyramid
     print ">"
     @nb_floors = gets.chomp.to_i
     # We want only pyramids of 25 height maximum
-    @nb_floors = nb_floors if (nb_floors >= 1 && nb_floors <= 25)
-    puts "Tu m'en demande trop. Entre 1 et 25 etages."
+    if (@nb_floors <= 1 || @nb_floors >= 25)
+      puts "Tu m'en demande trop. Entre 1 et 25 etages."
+    end
   end
 
   def descendant()
