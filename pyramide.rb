@@ -11,10 +11,10 @@ class Pyramid
     puts "Bienvenue dans Pyramid Builder. Combien d'etages veux-tu ? (1-25)";
     print ">"
     @nb_floors = gets.chomp.to_i
-    # We want only pyramids of 25 height maximum
-    if (@nb_floors <= 1 || @nb_floors >= 25)
-      puts "Tu m'en demande trop. Entre 1 et 25 etages."
-    end
+  end
+
+  def bye()
+    puts "Au revoir"
   end
 
   def descendant()
@@ -39,4 +39,8 @@ class Pyramid
 end
 
 my_pyramid = Pyramid.new()
-my_pyramid.inverted
+if (my_pyramid.nb_floors >=1 && my_pyramid.nb_floors <= 25)
+  my_pyramid.inverted
+else
+  puts "#{my_pyramid.nb_floors} n'est pas valide"
+end
