@@ -22,10 +22,10 @@ class Pyramid
     1.upto(@nb_floors) {|i| puts ('*' * i)}
   end
 
-  def inverted()
+  def inverted(symbol)
     # Display an ascendant way
     puts "\n\n\nVoici une partie de ta pyramide:\n\n"
-    1.upto(@nb_floors) {|i| puts(' '*(@nb_floors - i) + ('*' * i))}
+    1.upto(@nb_floors) {|i| puts(' '*(@nb_floors - i) + ("#{symbol}" * i))}
   end
 
   def descendant_while()
@@ -43,7 +43,7 @@ my_pyramid = Pyramid.new()
 # Control oustide object (best practise?)
 # We want floors 1..25
 if (my_pyramid.nb_floors >=1 && my_pyramid.nb_floors <= 25)
-  my_pyramid.inverted
+  my_pyramid.inverted("#")
 else
   puts "#{my_pyramid.nb_floors} n'est pas valide"
 end
