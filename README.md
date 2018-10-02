@@ -1,2 +1,3 @@
-Exercices Ruby semaine 0
-https://www.thehackingproject.org/code/semaine_0/
+Exercices effectués pendant le parcours The Hacking Project.
+
+https://www.thehackingproject.org/
