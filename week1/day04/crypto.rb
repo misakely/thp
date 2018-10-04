@@ -50,8 +50,10 @@ def currencies_under_6000(hashi)
       h[k] = v
     end
   end
-  # display dict a fancy way
-  h.each{|k,v| print " #{k}: #{v} $ /\\"}
+  # sort h by values ascendant
+  sorted_h = h.sort_by {|k, v| v}
+  # display a fancy way
+  sorted_h.each{|k,v| puts " #{k} (#{v}$)"}
   print "\n"
 end
 
