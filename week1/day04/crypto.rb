@@ -67,15 +67,6 @@ end
 def bigger_under_6000(hashi)
   # return the biggest value under 6000 $
   return currencies_under_6000(hashi).to_a.last
-  #v_max = 0
-  #key_vmax = ""
-  #hashi.each do |k,v|
-  #  if v < 6000 && v > v_max
-  #    v_max = v
-  #    key_vmax = k
-  #  end
-  #end
-  # return key_vmax, v_max
 end
 
 def some_questions_and_answers_around_hashes
