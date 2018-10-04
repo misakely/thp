@@ -7,8 +7,10 @@
 
 def somespace
   print "\n"
-  puts "Press space to continue (..)"
-  gets.chomp
+  puts "Press enter to continue (..)"
+  if gets.chomp == ""
+    print "\n"
+  end
 end
 
 def value_cleaner(amounts)
@@ -44,7 +46,7 @@ def contain_coin(hashi)
 end
 
 def currencies_under_6000(hashi)
-  # display currencies and their values < 6000$
+  # return a sorted h
   h = Hash.new
   hashi.each do |k,v|
     if v < 6000
@@ -53,20 +55,27 @@ def currencies_under_6000(hashi)
   end
   # sort h by values ascendant
   sorted_h = h.sort_by {|k, v| v}
-  # display a fancy way
-  sorted_h.each{|k,v| puts " #{k} (#{v}$)"}
+  return sorted_h
+end
+
+def display_fancy_hash(hashi)
+  # display currencies and values
+  hashi.each{|k,v| puts " #{k} (#{v}$)"}
   print "\n"
 end
 
 def bigger_under_6000(hashi)
   # return the biggest value under 6000 $
-  x = 0
-  hashi.each do |k,v|
-    if v < 6000 && v > x
-      x = v
-    end
-  end
-  return x
+  return currencies_under_6000(hashi).to_a.last
+  #v_max = 0
+  #key_vmax = ""
+  #hashi.each do |k,v|
+  #  if v < 6000 && v > v_max
+  #    v_max = v
+  #    key_vmax = k
+  #  end
+  #end
+  # return key_vmax, v_max
 end
 
 def some_questions_and_answers_around_hashes
@@ -78,17 +87,18 @@ def some_questions_and_answers_around_hashes
   puts "#{max_value(my_hash)[0]} (#{max_value(my_hash)[1]}$) "
   somespace
   puts "2. Donne moi la crypto qui a la plus petite valeur:"
-  puts "#{min_value(my_hash)}"
+  puts "#{min_value(my_hash)[0]} (#{min_value(my_hash)[1]}$) "
   somespace
   puts "3. Combien de crypto contiennent le mot 'coin' ?"
   puts "#{contain_coin(my_hash)}"
   somespace
-  puts "4. Sors moi tout les devises, dont le cours est inférieur à 6000 (WARNING, LOT OF STRINGS TO COME)"
+  puts "4. Sors moi toutes les devises, dont le cours est inférieur à 6000 (WARNING, LOT OF STRINGS TO COME)"
   somespace
-  currencies_under_6000(my_hash)
+  display_fancy_hash(currencies_under_6000(my_hash))
   somespace
   puts "5. Quel est le cours le plus haut parmi celle-la ?"
-  puts "#{bigger_under_6000(my_hash)}"
+  puts "#{bigger_under_6000(my_hash)[0]} (#{bigger_under_6000(my_hash)[1]}$)"
+  #puts "#{bigger_under_6000(my_hash)[1]} (#{bigger_under_6000(my_hash)[0]}$)"
 end
 
 some_questions_and_answers_around_hashes
