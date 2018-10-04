@@ -68,7 +68,7 @@ end
 
 def organize(list)
   # organize handles, dont forget to downcase
-  return list.sort_by{ |elem| variable.downcase  }
+  return list.sort_by{ |elem| elem.downcase  }
 end
 
 def display(list)
@@ -93,7 +93,6 @@ def display(list)
   separator
   puts "7.Trie la liste de handle par ordre alphabétique"
   puts "\n#{organize(list)}\n"
-
 end
 
 display(journalists)
