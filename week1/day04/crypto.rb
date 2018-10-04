@@ -89,7 +89,6 @@ def some_questions_and_answers_around_hashes
   somespace
   puts "5. Quel est le cours le plus haut parmi celle-la ?"
   puts "#{bigger_under_6000(my_hash)[0]} (#{bigger_under_6000(my_hash)[1]}$)"
-  #puts "#{bigger_under_6000(my_hash)[1]} (#{bigger_under_6000(my_hash)[0]}$)"
 end
 
 some_questions_and_answers_around_hashes
