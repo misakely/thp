@@ -36,14 +36,21 @@ def min_value(hashi)
 end
 
 def contain_coin(hashi)
-  # count keys which contains "coin" but we dont know
-  i = 0
+  # count keys which contains "coin"
+  douwni = 0
+  uppi = 0
+  biigi = 0
   hashi.each do |k,v|
-    if k.downcase.include? "coin"
-      i += 1
+    if k.include? "coin"
+      douwni += 1
+    elsif k.include? "Coin"
+      uppi += 1
+    elsif k.include? "COIN"
+      biigi += 1
     end
   end
-  return i
+  total = douwni + uppi + biigi
+  return douwni, uppi, biigi, total
 end
 
 def currencies_under_6000(hashi)
@@ -82,7 +89,7 @@ def some_questions_and_answers_around_hashes
   puts "#{min_value(my_hash)[0]} (#{min_value(my_hash)[1]}$) "
   somespace
   puts "3. Combien de crypto contiennent le mot 'coin' ?"
-  puts "#{contain_coin(my_hash)}"
+  puts "'coin' :#{contain_coin(my_hash)[0]}\n'Coin':#{contain_coin(my_hash)[1]}\n'COIN'#{contain_coin(my_hash)[2]}\nTOTAL:#{contain_coin(my_hash)[3]}"
   somespace
   puts "4. Sors moi toutes les devises, dont le cours est inférieur à 6000 (WARNING, LOT OF STRINGS TO COME)"
   somespace
