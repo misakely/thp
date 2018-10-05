@@ -89,7 +89,7 @@ def some_questions_and_answers_around_hashes
   puts "#{min_value(my_hash)[0]} (#{min_value(my_hash)[1]}$) "
   somespace
   puts "3. Combien de crypto contiennent le mot 'coin' ?"
-  puts "'coin' :#{contain_coin(my_hash)[0]}\n'Coin':#{contain_coin(my_hash)[1]}\n'COIN'#{contain_coin(my_hash)[2]}\nTOTAL:#{contain_coin(my_hash)[3]}"
+  puts "'coin' :#{contain_coin(my_hash)[0]}\n'Coin':#{contain_coin(my_hash)[1]}\n'COIN'#{contain_coin(my_hash)[2]}\nTOTAL(downcase):#{contain_coin(my_hash)[3]}"
   somespace
   puts "4. Sors moi toutes les devises, dont le cours est inférieur à 6000 (WARNING, LOT OF STRINGS TO COME)"
   somespace
