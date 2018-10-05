@@ -1,4 +1,4 @@
-Exercices effectués pendant le parcours The Hacking Project.
+The Hacking Project
 
 Contributors:
 asvinie057 - Asvninie Baleswaran
@@ -7,6 +7,6 @@ gdanj - Dan
 rumkox - Camilo Orozco Rodas
 tonoutt - Antoine
 Zybouric - Christine Hoang
-mothinx
+mothinx - Julien Gracia
 
 https://www.thehackingproject.org/
