@@ -66,10 +66,10 @@ describe "#translate" do
   end
 
   it "keep capitalized word" do
-    s = translate("Square")
+    s = translate("Vive le Couscous")
     expect(s).to eq("Aresquay")
   end
-  # Test-driving bonus:
+  # Test-driving bonus: 
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
   it "retain punctuation"
