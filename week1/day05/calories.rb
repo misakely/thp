@@ -27,7 +27,12 @@ MENU["WELSH"] = WELSH
 MENU["FRITES"] = FRITES
 MENU["BIERE"] = BIERE
 
+PRIX = Hash.new
+WELSH[:prix] = 15
+FRITES[:prix] = 4
+BIERE[:prix] = 5
 
+p PRIX
 def weight_watchers(dish)
   #return number of calories
   total = 0
