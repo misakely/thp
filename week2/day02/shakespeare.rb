@@ -19,7 +19,6 @@ def substring(sentence, dictionary)
 end
 
 def match_shakespeare(filename,dictionary=@SHORT_DIC)
-
   matches = Hash.new {}
   f = File.open(filename)
   f.each_line do |line|
@@ -32,7 +31,7 @@ def match_shakespeare(filename,dictionary=@SHORT_DIC)
       end
     end
   end
-  return matches
+  return matches.sort_by {|_key, value| value}.to_h
 end
 
 # get swearwords from file
