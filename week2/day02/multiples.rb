@@ -1,6 +1,7 @@
-def multiple_3_5(n)
+def multiple_3_5(limit)
   sum = 0
-  (1..n-1).each do |i|
+  (1..limit-1).each do |i|
+    # add multiple of 3 and 5 to sum
     if i % 3 == 0 || i % 5 == 0
       sum += i
     end
