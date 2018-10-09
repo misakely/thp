@@ -1,4 +1,4 @@
-def trader_du_dimanche(prices)
+def best_moves(prices)
   # Return a pair representing best day to buy and to sell (best diff)
   highest_diff = 0
   pair = [0, 0]
@@ -49,7 +49,7 @@ end
 def launcher
   my_hash = the_hash_maker
   my_hash.each do |keys, values|
-    moves = trader_du_dimanche(values)
+    moves = best_moves(values)
     day_to_buy = to_days(moves[0])
     day_to_sell = to_days(moves[1])
     puts "#{keys} buy #{day_to_buy} for #{values[moves[0]]}$ sell #{day_to_sell} for #{values[moves[1]]}$"
