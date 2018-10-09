@@ -47,7 +47,9 @@ end
 def launcher
   #puts "#{match_shakespeare(shakespeare.txt)}"
   swearwords = get_swearwords('swearwords.txt')
-  puts "#{match_shakespeare('shakespeare.txt', swearwords)}"
+  matches_swear = match_shakespeare('shakespeare.txt', swearwords)
+  puts "Total of swear words from The Complete Works of William Shakespare \n#{matches_swear.values.inject(0){|sum,x| sum + x }}"
+  p matches_swear
 end
 
 
