@@ -1,15 +1,12 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 
-PAGE_URL = "https://coinmarketcap.com/all/views/all/"
-
+# A bot to scan coinmarketcap
 class TraderBot
-
   def initialize
-    @page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
-    @names = prices
+    @page = Nokogiri::HTML(open('https://coinmarketcap.com/all/views/all/'))
+    @prices = prices
   end
 
   def prices
@@ -22,8 +19,9 @@ class TraderBot
       values << node.text
     end
     prices = Hash[names.zip(values)]
-    pp prices
+    prices
   end
 end
 
 my_trader = TraderBot.new
+puts my_trader.prices
