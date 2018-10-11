@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
 def get_the_email_of_a_townhal_from_its_webpage(townhall_url)
+    # take an url (string), and return an email as a string
     page = Nokogiri::HTML(open(townhall_url))
     page.css("/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]").text
 end
