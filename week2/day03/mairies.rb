@@ -19,16 +19,17 @@ def get_all_the_urls_of_val_doise_townhalls
 end
 
 def perform
-  emails = Hash.new{0}
+  emails = []
+  names = []
   get_all_the_urls_of_val_doise_townhalls.each do |url|
-    email = get_the_email_of_a_townhal_from_its_webpage(url)
-    town = url.split('/')[4][0..-6]
-    emails[town] = email
-    puts "adding #{town} to the Hash"
+    emails << get_the_email_of_a_townhal_from_its_webpage(url)
+    names << name = url.split('/')[4][0..-6]
+    puts "Datas for #{name} : OK"
   end
+  big_data = Hash[names.zip(emails)]
   puts "Hash is ready, press ENTER"
   gets
-  puts emails
+  puts big_data
 end
 
 perform

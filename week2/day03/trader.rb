@@ -23,5 +23,6 @@ class TraderBot
   end
 end
 
+puts "Loading, please wait..."
 my_trader = TraderBot.new
-puts my_trader.prices
+p my_trader.prices
